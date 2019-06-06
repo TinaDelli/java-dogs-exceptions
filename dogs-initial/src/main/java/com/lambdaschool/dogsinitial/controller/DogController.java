@@ -28,7 +28,7 @@ public class DogController
     RabbitTemplate rt;
 
 
-    // localhost:8080/dogs/dogs
+    // localhost:2017/dogs/dogs
     @GetMapping(value = "/dogs", produces = {"application/json"})
     public ResponseEntity<?> getAllDogs()
     {
@@ -40,7 +40,7 @@ public class DogController
         return new ResponseEntity<>(DogsinitialApplication.ourDogList.dogList, HttpStatus.OK);
     }
 
-    // localhost:8080/dogs/{id}
+    // localhost:2017/dogs/{id}
     @GetMapping(value = "/{id}", produces = {"application/json"})
     public ResponseEntity<?> getDogDetail(@PathVariable long id)
     {
@@ -59,7 +59,7 @@ public class DogController
         return new ResponseEntity<>(rtnDog, HttpStatus.OK);
     }
 
-    // localhost:8080/dogs/breeds/{breed}
+    // localhost:2017/dogs/breeds/{breed}
     @GetMapping(value = "/breeds/{breed}")
     public ResponseEntity<?> getDogBreeds (@PathVariable String breed)
     {
